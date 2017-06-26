@@ -112,8 +112,8 @@ class PostDetailView(DetailView):
 class ArchivesView(IndexView):
     
     def get_queryset(self):
-        return super(ArchivesView, self).get_queryset().filter(created_time__year = self.kwargs.get('year'),
-                                                               created_time__month = self.kwargs.get('month'))
+        return super(ArchivesView, self).get_queryset().filter(created__year = self.kwargs.get('year'),
+                                                               created__month = self.kwargs.get('month'))
 # 分类页面
 class CategoryView(IndexView):
     
